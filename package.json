@@ -1,0 +1,15 @@
+{
+  "name": "nodemon-replication",
+  "version": "1.0.0",
+  "description": "Another learning project with Node.js. The aim in to replicate the functionality of nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "watchit":"index.js"
+  }
+}
