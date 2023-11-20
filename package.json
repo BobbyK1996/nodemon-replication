@@ -1,6 +1,7 @@
 {
   "name": "nodemon-replication",
   "version": "1.0.0",
+  "type":"module",
   "description": "Another learning project with Node.js. The aim in to replicate the functionality of nodemon",
   "main": "index.js",
   "scripts": {
@@ -10,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "watchit":"index.js"
+    "watchit": "index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3"
   }
 }
