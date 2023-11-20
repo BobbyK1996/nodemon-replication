@@ -1,21 +1,17 @@
 #!/usr/bin/env node
 
-import chokidar from "chokidar";
+import CHOKIDAR from "chokidar";
+import PROGRAM from "caporal";
 
 const debounce = (func, delay = 100) => {
   let timeoutId;
   return (...args) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    timeoutId = setTimeout(() => {
-      func.apply(null, args);
-    }, delay);
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
   };
 };
 
-chokidar
-  .watch(".")
+CHOKIDAR.watch(".")
   .on(
     "add",
     debounce(() => {
