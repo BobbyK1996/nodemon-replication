@@ -4,6 +4,7 @@ import CHOKIDAR from "chokidar";
 import PROGRAM from "caporal";
 import FS from "fs";
 import { spawn } from "child_process";
+import CHALK from "chalk";
 
 const debounce = (func, delay = 100) => {
   let timeoutId;
@@ -29,6 +30,7 @@ PROGRAM.version("0.0.1")
       if (proc) {
         proc.kill();
       }
+      console.log(CHALK.blue(">>>> Started Process..."));
       proc = spawn("node", [name], { stdio: "inherit" });
     }, 100);
 
