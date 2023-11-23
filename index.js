@@ -24,8 +24,12 @@ PROGRAM.version("0.0.1")
       throw new Error(`Could not find the file ${name}`);
     }
 
+    let proc;
     const start = debounce(() => {
-      spawn("node", [name], { stdio: "inherit" });
+      if (proc) {
+        proc.kill();
+      }
+      proc = spawn("node", [name], { stdio: "inherit" });
     }, 100);
 
     CHOKIDAR.watch(".")
