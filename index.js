@@ -3,6 +3,7 @@
 import CHOKIDAR from "chokidar";
 import PROGRAM from "caporal";
 import FS from "fs";
+import { spawn } from "child_process";
 
 const debounce = (func, delay = 100) => {
   let timeoutId;
@@ -24,8 +25,8 @@ PROGRAM.version("0.0.1")
     }
 
     const start = debounce(() => {
-      console.log("STARTING USERS PROGRAM"), 100;
-    });
+      spawn("node", [name], { stdio: "inherit" });
+    }, 100);
 
     CHOKIDAR.watch(".")
       .on("add", start)
